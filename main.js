@@ -2,6 +2,7 @@ var area=document.getElementById('area'),
 m=0;
 
 area.addEventListener('click',function(event){
+   remove();
     if(m%2==0){
     event.target.innerHTML="x";}
     else{event.target.innerHTML="0";}
@@ -10,6 +11,13 @@ area.addEventListener('click',function(event){
     if(!event.target.classList.contains('highlight')){event.target.classList.add('highlight');}
     else event.target.classList.remove('highlight');
 });
+function remove(){
+    let boxes=area.getElementsByClassName('box')
+    for(let i=0;i<boxes.length;i++){
+        if(boxes[i].classList.contains('highlight')){
+            boxes[i].classList.remove('highlight');
+        }}
+}
 
 function check(){
 var boxes=area.getElementsByClassName('box');
